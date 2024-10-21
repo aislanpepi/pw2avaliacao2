@@ -1,0 +1,49 @@
+form {
+    max-width: 400px; /* Limit the width of the form */
+    background: #fff; /* White background for the form */
+    padding: 20px; /* Inner padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    margin-bottom: 15px; /* Space between groups */
+}
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+    color: #555; /* Gray label color */
+    font-weight: bold; /* Bold label */
+}
+
+input, textarea {
+    padding: 10px; /* Inner padding for inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners for inputs */
+    font-size: 16px; /* Font size for inputs */
+    transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+}
+
+button {
+    padding: 10px 15px; /* Inner padding for button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+    margin-top: 20px; /* Add space above the button */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

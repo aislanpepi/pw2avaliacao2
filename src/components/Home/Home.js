@@ -2,7 +2,10 @@ import React from "react";
 
 const Home = () =>{
     return(
-        <p> OI </p>
+        <div>
+            <br/>
+            <p> OI </p>
+        </div>
     );
 }
 export default Home;
