@@ -44,3 +44,7 @@ a {
     border-radius: 3px;
     transition: ease-in-out 1s;
 }
+h1{
+    display: flex;
+    justify-content: center;
+}
