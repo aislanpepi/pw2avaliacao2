@@ -1,49 +1,63 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
 import './Create.css';
 
 const Create = () => {
-    const [name, setName] = useState('');
-    const [gender, setGender] = useState('');
-    const [year, setYear] = useState('');
+    const [values, setValues] = useState({
+        movie: '',
+        year: '',
+        gender: ''
+    });
+
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log({ name, gender, year });
+        axios.post('https://671653ff3fcb11b265d1ee09.mockapi.io/avaliation2', values)
+            .then(res => {
+                console.log(res);
+                navigate('/');
+            })
+            .catch(err => console.log(err));
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="form-group">
-                <label htmlFor="name">Nome:</label>
+        <form onSubmit={handleSubmit} className="container mt-4 col-md-6 mx-auto">
+            <div className="mb-3">
+                <label htmlFor="movie" className="form-label">Nome:</label>
                 <input
                     type="text"
-                    id="name"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
+                    id="movie"
+                    name="movie"
+                    className="form-control"
+                    value={values.movie}
+                    onChange={e => setValues({ ...values, movie: e.target.value })}
                 />
             </div>
-            <div className="form-group">
-                <label htmlFor="gender">Gênero:</label>
+            <div className="mb-3">
+                <label htmlFor="gender" className="form-label">Gênero:</label>
                 <input
                     type="text"
                     id="gender"
                     name="gender"
-                    value={gender}
-                    onChange={(e) => setGender(e.target.value)}
+                    className="form-control"
+                    value={values.gender}
+                    onChange={e => setValues({ ...values, gender: e.target.value })}
                 />
             </div>
-            <div className="form-group">
-                <label htmlFor="year">Ano:</label>
+            <div className="mb-3">
+                <label htmlFor="year" className="form-label">Ano:</label>
                 <input
                     type="text"
                     id="year"
                     name="year"
-                    value={year}
-                    onChange={(e) => setYear(e.target.value)}
+                    className="form-control"
+                    value={values.year}
+                    onChange={e => setValues({ ...values, year: e.target.value })}
                 />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     );
 }
