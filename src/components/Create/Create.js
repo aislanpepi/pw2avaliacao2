@@ -57,7 +57,16 @@ const Create = () => {
                     onChange={e => setValues({ ...values, year: e.target.value })}
                 />
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <div className="d-flex justify-content-between">
+                <button type="submit" className="btn btn-primary">Criar</button>
+                <button 
+                    type="button" 
+                    className="btn btn-secondary" 
+                    onClick={() => navigate('/')}
+                >
+                    Cancelar
+                </button>
+            </div>
         </form>
     );
 }

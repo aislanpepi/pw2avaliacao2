@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import './Home.css';
 
 const Home = () => {
@@ -11,44 +12,27 @@ const Home = () => {
             .catch(err => console.log(err));
     }, []);
 
-    const handleRead = (id) => {
-        console.log('Reading:', id);
-    };
-
-    const handleEdit = (id) => {
-        console.log('Editing:', id);
-    };
-
-    const handleDelete = (id) => {
-        console.log('Deleting:', id);
-    };
-
     return (
         <div className="w-50 mx-auto">
-            <h1 className="text-center">Lista de Usuários</h1>
             <div className="table-responsive">
-                <table className="table table-striped">
+                <table className="table table-striped table-hover">
                     <thead className="thead-light">
                         <tr>
                             <th>ID</th>
-                            <th>Nome</th>
-                            <th className="w-50 text-center">Ação</th>
+                            <th>Filme</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            data.map((d) => (
-                                <tr className="user-row" key={d.id}>
-                                    <td>{d.id}</td>
-                                    <td>{d.movie}</td>
-                                    <td className="text-end">
-                                        <button className="btn btn-info btn-sm me-2" onClick={() => handleRead(d.id)}>Ler</button>
-                                        <button className="btn btn-primary btn-sm me-2" onClick={() => handleEdit(d.id)}>Editar</button>
-                                        <button className="btn btn-danger btn-sm me-2" onClick={() => handleDelete(d.id)}>Apagar</button>
-                                    </td>
-                                </tr>
-                            ))
-                        }
+                        {data.map((d) => (
+                            <tr key={d.id} className="user-row">
+                                <td>{d.id}</td>
+                                <td>
+                                    <Link to={`/read/${d.id}`} className="text-decoration-none text-dark">
+                                        {d.movie}
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
