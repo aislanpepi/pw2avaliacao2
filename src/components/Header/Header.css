@@ -1,51 +1,11 @@
-a {
-    text-decoration: none;
-    color: white; 
+.nav-link {
+    transition: ease-in-out 0.3s; /* Smooth transition */
+    color: white; /* Default color */
 }
 
-.header {
-    border-radius: 5px;
-    background-color: black;
-    border: 2px solid black;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 25px;
-}
-
-.header ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.header li {
-    margin-right: 100px;
-    transition: ease-in-out 1s;
-}
-
-.header li a{
-    transition: ease-in-out 1s; 
-}
-
-.header li:last-child {
-    margin-right: 0;
-}
-
-.header li:hover a {
-    color: black;
-    background-color: white; 
-    padding: 5px;
-    border-radius: 3px;
-    transition: ease-in-out 1s;
-}
-h1{
-    display: flex;
-    justify-content: center;
+.nav-link:hover {
+    color: black !important; /* Force black text color on hover */
+    background-color: white; /* Background color on hover */
+    padding: 5px; /* Padding for hover effect */
+    border-radius: 3px; /* Rounded corners */
 }
