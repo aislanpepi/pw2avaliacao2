@@ -26,7 +26,6 @@ const Update = () => {
         e.preventDefault();
         axios.put(`https://671653ff3fcb11b265d1ee09.mockapi.io/avaliation2/${id}`, values)
             .then(res => {
-                console.log('User updated:', res);
                 navigate('/');
             })
             .catch(err => console.log(err));
