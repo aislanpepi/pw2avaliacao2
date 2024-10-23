@@ -8,16 +8,16 @@ const Delete = () => {
 
     const handleDelete = (e) => {
         e.preventDefault();
-        const confirm = window.confirm("Quer mesmo apagar este usuário?");
+        const confirm = window.confirm("Quer mesmo apagar este filme?");
         if (confirm) {
             axios.delete(`https://671653ff3fcb11b265d1ee09.mockapi.io/avaliation2/${id}`)
                 .then(() => {
-                    alert('Usuário apagado com sucesso!');
+                    alert('Filme apagado com sucesso!');
                     navigate('/');
                 })
                 .catch(err => {
-                    console.error(err);
-                    alert('Erro ao apagar usuário. Tente novamente.');
+                    alert("Filme não encontrado!")
+                    navigate('/');
                 });
         }
     };

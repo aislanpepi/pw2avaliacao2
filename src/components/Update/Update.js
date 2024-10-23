@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 
 const Update = () => {
     const [id, setId] = useState('');
@@ -19,7 +19,10 @@ const Update = () => {
                 });
                 setIsFetched(true);
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                alert("Filme não encontrado!")
+                navigate('/');
+            });
     };
 
     const handleUpdate = (e) => {
